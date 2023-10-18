@@ -4,7 +4,7 @@
 const Product = require('../models/productModel')
 
 
-// @desc    Gests all products
+// @desc    Gets all products
 // @route   GET /api/product
 async function getProducts(req, res) {
   try {
@@ -19,7 +19,7 @@ async function getProducts(req, res) {
 }
 
 
-// @desc    Gests single product
+// @desc    Gets single product
 // @route   GET /api/product/:id
 async function getProduct(req, res, id) {
   try {
@@ -41,7 +41,24 @@ async function getProduct(req, res, id) {
   }
 }
 
+
+// @desc    Creates a new product
+// @route   Post /api/product
+async function createProduct(req, res) {
+  try {
+    const product = {
+      title: '',
+      description: '',
+      price: 100
+    }
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   getProducts,
-  getProduct
+  getProduct,
+  createProduct
 }
